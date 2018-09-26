@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
   pageTitle: string = 'Product List';
+  imageWidth: number = 50;
+  imageMargin: number = 2;
+  showImage: boolean = false;
+  listFilter: string = 'cart';
   products: any[] = [
     {
     "productId": 2,
@@ -18,7 +22,10 @@ export class ProductListComponent implements OnInit {
     "starRating" : 4.2,
     "imageUrl": "https://openclipart.org/image/300px/svg_to_png/262421/Tomato-by-Rones.png"
     }
-  ]
+  ];
+  toggleImage(): void{
+    this.showImage = !this.showImage;
+  }
   constructor() { }
 
   ngOnInit() {
